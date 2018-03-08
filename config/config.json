@@ -1,0 +1,34 @@
+{
+    "secret": "Example node App",
+    "dbUrl": "localhost:27017/",
+    "dbName": "Chat",
+    "messages": {
+        "user": {
+            "success_user": "Authentication Successfully",
+            "error_userPassword": "Password Not Match the User",
+            "error_user": "User Not Found",
+            "register_success": "User Register Successfully",
+            "register_erroruser": "User Already Exists",
+            "error_getUser": "No Users Found",
+            "success_getUser": "Get Users Successfully",
+            "error_user_id": "Cannot be blank User ID",
+            "error_noUser": "No User Found this ID",
+            "success_update_profile": "User Profile Updated Successfully",
+            "error_update_profile": "User Profile Not Updated"
+        },
+        "chat":{
+            "success_chat":"Message Send Successfully",
+            "error_chat":"Message Not Send Successfully",
+            "success_updateChat":"Message Updated Successfully",
+            "error_updateChat":"Message Not Updated Successfully",
+            "get_success":"Message Get Successfully",
+            "delete_chat":"Message Delete Successfully",
+            "error_deleteChat":"Message Not Deleted Successfully"
+        },
+        "common": {
+            "invalid_parameter": "Invalid Parameters",
+            "unauthorize": "Un Authorization Must Pass Access Token",
+            "no_user":"No User Found"
+        }
+    }
+}
