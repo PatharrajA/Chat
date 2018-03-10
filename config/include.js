@@ -14,12 +14,6 @@ Joi = require('joi');
 
 var server = require('http').createServer(app);
 io = require('socket.io')(server);
-socket="";
-
-io.on('connection',function(socket){
-    socket=socket;
-    console.log("A User Connected");
-});
 server.listen(4000);
 
 
@@ -29,6 +23,7 @@ getToken = require('./token');
 // Inject Validators
 schemaValitator = require('./schemaValidator');
 // Inject Controller
+require('../controllers/ioEvents');
 controller = require('./modelController');
 
 

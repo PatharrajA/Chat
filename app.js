@@ -1,3 +1,4 @@
+require('dotenv').config();
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -16,7 +17,7 @@ var users = require('./routes/users');
 // Api Config
 var userRoute = require('./routes/userRouter');
 var chatRoute=require('./routes/chatRouter');
-
+var friendRoute=require('./routes/friendRouter');
 
 var app = express();
 
@@ -54,6 +55,11 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/api/user', userRoute);
 app.use('/api/chat', chatRoute);
+app.use('/api/friend',friendRoute);
+
+var swaggerUi = require('swagger-ui-express'),
+    swaggerDocument = require('./swagger.json');
+    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

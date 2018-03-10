@@ -25,10 +25,21 @@
             "delete_chat":"Message Delete Successfully",
             "error_deleteChat":"Message Not Deleted Successfully"
         },
+        "friends":{
+            "getFriends":"Friends List Get Successfully",
+            "error_getFriends":"Get Friends List Not Successfully",
+            "success_friends":"Friend Request Send Sucessfully",
+            "error_request":"Friend Request Not Send Sucessfully",
+            "success_unfriend":"Unfriend Successfully",
+            "error_unfriend":"Unfriend Not Successfully",
+            "success_accept":"Friend Request Accept Successfully",
+            "error_accept":"Friend Request Not Accept Successfully"
+        },
         "common": {
             "invalid_parameter": "Invalid Parameters",
             "unauthorize": "Un Authorization Must Pass Access Token",
-            "no_user":"No User Found"
+            "no_user":"No User Found",
+            "params_error":"Parameters  Required"
         }
     }
 }

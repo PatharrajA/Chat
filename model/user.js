@@ -148,7 +148,7 @@ var user = function() {
                         user = user.toObject();
                         delete user.password;
                         result_obtained = {
-                            data: userInfo,
+                            data: user,
                             message: config.messages.user.register_success,
                             code: 200,
                             success: true

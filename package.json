@@ -10,6 +10,7 @@
         "body-parser": "~1.17.1",
         "cookie-parser": "~1.4.3",
         "debug": "~2.6.3",
+        "dotenv": "^5.0.1",
         "express": "~4.15.2",
         "helmet": "^3.8.1",
         "jade": "~1.11.0",
@@ -22,6 +23,7 @@
         "passport-local": "^1.0.0",
         "serve-favicon": "~2.4.2",
         "socketio": "^1.0.0",
+        "swagger-ui-express": "^2.0.15",
         "winston": "^2.3.1"
     },
     "devDependencies": {
