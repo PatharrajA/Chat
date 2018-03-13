@@ -40,7 +40,15 @@ _chatModal = mongoose.model('Chat', chat_modal);
 var chat = function() {
     var error_obtained = "",
         result_obtained = "";
-
+/**
+ * Get Single Chat.
+ * @constructor Function
+ * @param {string} title - Single Chat
+ * @param {string} author - Patharraj
+ * @param {string} Parameter - receiver_id sender_id
+ * @description Get All Chat one to one chat
+ * @returns Chat
+ */
     var _getChat = function(jsonData, callback) {
         if ((jsonData.receiver != undefined && jsonData != null) || (jsonData.sender != undefined && jsonData.sender != null)) {
             _chatModal.find({ $and: [{ "receiver_id": jsonData.receiver }, { "sender_id": jsonData.sender }] }, function(err, message) {
@@ -73,7 +81,14 @@ var chat = function() {
         }
     };
 
-
+/**
+ * Single Chat.
+ * @constructor Function
+ * @param {string} title - Single Chat
+ * @param {string} author - Patharraj
+ * @description Create New Chat one to one chat
+ * @returns Chat
+ */
     var _createChat = function(jsonData, callback) {
         var chatModel = new _chatModal(jsonData);
         chatModel.save(function(err, message) {
@@ -96,7 +111,15 @@ var chat = function() {
             }
         });
     };
-
+    
+/**
+ * Single Chat.
+ * @constructor Function
+ * @param {string} title - Single Chat
+ * @param {string} author - Patharraj
+ * @description Create New Chat one to one chat
+ * @returns Chat
+ */
     var _updateChat = function(chat_id, jsonData, callback) {
         if (chat_id != undefined && chat_id != null) {
             _chatModal.update({ "_id": chat_id }, { $set: jsonData }, function(err, message) {

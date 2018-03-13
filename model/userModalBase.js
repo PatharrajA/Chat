@@ -18,7 +18,8 @@ var user_modal = mongoose.Schema({
         value: Date.now()
     },
     profile_img: {
-        type: String
+        type: String,
+        default:""
     },
     first_name: {
         type: String
@@ -29,6 +30,11 @@ var user_modal = mongoose.Schema({
     updated_at: {
         type: Date,
         value: Date.now()
+    },
+    friends:[],
+    groups:[],
+    fcm_token:{
+        type:String
     }
 });
 

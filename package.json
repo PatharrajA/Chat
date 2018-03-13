@@ -28,6 +28,7 @@
     },
     "devDependencies": {
         "apidoc": "^0.17.6",
-        "grunt-apidoc": "^0.11.0"
+        "grunt-apidoc": "^0.11.0",
+        "jsdoc": "^3.5.5"
     }
 }

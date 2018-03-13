@@ -35,6 +35,21 @@
             "success_accept":"Friend Request Accept Successfully",
             "error_accept":"Friend Request Not Accept Successfully"
         },
+        "group":{
+            "success_group":"Group Created Sucessfully",
+            "error_group":"Group Created Not Sucessfully",
+            "get_groupSuccess":"Get Group Successfully",
+            "get_groupError":"Get Group Not Successfully",
+            "success_deleteGroup":"Group Deleted Successfully",
+            "error_deleteGroup":"Group Deleted Not Sucessfully",
+            "member_success":"Members Added Successfully",
+            "member_error":"Members Added Not Successfully",
+            "update_groupSuccess":"Group Details Added Successfully",
+            "update_groupError":"Group Details Not Added Successfully",
+            "no_group":"No Groups Found",
+            "left_groupSuccess":"User Left A Group Successfully",
+            "left_groupError":"User Left a Group Not Successfully"
+        },
         "common": {
             "invalid_parameter": "Invalid Parameters",
             "unauthorize": "Un Authorization Must Pass Access Token",
