@@ -6,3 +6,11 @@ _userModel = require('../model/userModalBase');
 userController = require('../model/user');
 chatController=require('../model/chat');
 friendsController=require('../model/friends');
+groupController=require('../model/group');
+
+
+
+// Function Controllers
+
+fileUpload=require('../controllers/firebaseFileUpload');
+notification=require('../controllers/notification');

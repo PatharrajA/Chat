@@ -1,4 +1,5 @@
 require('dotenv').config();
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -7,6 +8,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 // Require JS Files
+environment=require('./config/environment');
 require('./config/include');
 require('./config/db');
 require('./config/passport')(passport);
@@ -18,15 +20,9 @@ var users = require('./routes/users');
 var userRoute = require('./routes/userRouter');
 var chatRoute=require('./routes/chatRouter');
 var friendRoute=require('./routes/friendRouter');
+var groupRoute=require('./routes/groupRouter');
 
 var app = express();
-
-// Socket.io include
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-io.on("connection", (socket) => {
-    console.log("Socket is connected...")
-})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -56,6 +52,7 @@ app.use('/users', users);
 app.use('/api/user', userRoute);
 app.use('/api/chat', chatRoute);
 app.use('/api/friend',friendRoute);
+app.use('/api/group',groupRoute);
 
 var swaggerUi = require('swagger-ui-express'),
     swaggerDocument = require('./swagger.json');

@@ -31,6 +31,9 @@ var chat_modal = mongoose.Schema({
     },
     reply_message: {
         type: String
+    },
+    chat_file:{
+        type:String
     }
 });
 
@@ -90,6 +93,9 @@ var chat = function() {
  * @returns Chat
  */
     var _createChat = function(jsonData, callback) {
+        if(jsonData.chat_type =="1"){
+            jsonData.chat_file=fileUpload.upload(jsonData.file);
+        }
         var chatModel = new _chatModal(jsonData);
         chatModel.save(function(err, message) {
             if (!err) {
@@ -122,6 +128,9 @@ var chat = function() {
  */
     var _updateChat = function(chat_id, jsonData, callback) {
         if (chat_id != undefined && chat_id != null) {
+            if(jsonData.chat_type =="1"){
+                jsonData.chat_file=fileUpload.upload(jsonData.file);
+            }
             _chatModal.update({ "_id": chat_id }, { $set: jsonData }, function(err, message) {
                 if (!err) {
                     result_obtained = {
