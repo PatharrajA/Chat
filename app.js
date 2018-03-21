@@ -14,13 +14,13 @@ require('./config/db');
 require('./config/passport')(passport);
 
 var index = require('./routes/index');
-var users = require('./routes/users');
 
 // Api Config
 var userRoute = require('./routes/userRouter');
 var chatRoute=require('./routes/chatRouter');
 var friendRoute=require('./routes/friendRouter');
 var groupRoute=require('./routes/groupRouter');
+var contactRoute=require('./routes/contactRouter');
 
 var app = express();
 
@@ -52,6 +52,7 @@ app.use('/api/user', userRoute);
 app.use('/api/chat', chatRoute);
 app.use('/api/friend',friendRoute);
 app.use('/api/group',groupRoute);
+app.use('/api/contact',contactRoute);
 
 var swaggerUi = require('swagger-ui-express'),
     swaggerDocument = require('./swagger.json');

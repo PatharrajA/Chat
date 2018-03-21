@@ -7,7 +7,7 @@
  * @description Get All Chat one to one chat
  * @returns Chat
  */
-router.route('/chat/:receiver_id/:sender_id').get(function(req, res) {
+router.route('/:receiver_id/:sender_id').get(passport.authenticate('jwt', { session: true }),function(req, res) {
     try {
         var infoMsg = {
             "url": req.originalUrl,
@@ -47,7 +47,7 @@ router.route('/chat/:receiver_id/:sender_id').get(function(req, res) {
  * @description Create Chat one to one chat
  * @returns
  */
-router.route('/chat').post(function(req,res){
+router.route('/').post(passport.authenticate('jwt', { session: true }),function(req,res){
     try{
         var infoMsg = {
             "url": req.originalUrl,
@@ -88,7 +88,7 @@ router.route('/chat').post(function(req,res){
  * @description Delete Chat one to one chat
  * @returns
  */
-router.route('/chat/:chat_id').delete(function(req,res){
+router.route('/:chat_id').delete(passport.authenticate('jwt', { session: true }),function(req,res){
     try {
         var infoMsg = {
             "url": req.originalUrl,
@@ -126,7 +126,7 @@ router.route('/chat/:chat_id').delete(function(req,res){
  * @description Reply Chat one to one chat
  * @returns
  */
-.put(function(req,res){
+.put(passport.authenticate('jwt', { session: true }),function(req,res){
     try{
         var infoMsg = {
             "url": req.originalUrl,

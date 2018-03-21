@@ -321,6 +321,9 @@ var user = function() {
                 profile_img: jsondata.profile,
                 first_name: (jsondata.first_name) ? jsondata.first_name : "",
                 last_name: (jsondata.last_name) ? jsondata.last_name : "",
+                mobile:(jsondata.mobile) ? jsondata.mobile :"",
+                gender:(jsondata.gender) ? jsondata.gender :"",
+                dob:(jsondata.dob) ? jsondata.dob :"",
                 updated_at: Date.now()
             };
             _userModel.update({ "_id": user_id }, { $set: updateProfile }, function(err, user) {
@@ -355,7 +358,9 @@ var user = function() {
 
     };
 
+// var _changeProfilePicture=function(jsonData,callback){
 
+// };
     return {
         login: _login,
         register: _register,

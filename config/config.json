@@ -50,6 +50,16 @@
             "left_groupSuccess":"User Left A Group Successfully",
             "left_groupError":"User Left a Group Not Successfully"
         },
+        "contact":{
+            "get_successContact":"Get Contacts Successfully",
+            "get_errorContact":"Get Contacts Not Successfully",
+            "success_contact":"Contact List Added Successfully",
+            "error_contact":"Contact List Not Added Successfully",
+            "update_success":"Contact List Updated Successfully",
+            "update_error":"Contact List Not Updated Successfully",
+            "delete_success":"Contact List Deleted Successfully",
+            "delete_error":"Contact List Not Deleted Successfully"
+        },
         "common": {
             "invalid_parameter": "Invalid Parameters",
             "unauthorize": "Un Authorization Must Pass Access Token",

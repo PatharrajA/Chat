@@ -1,4 +1,4 @@
-router.route('/getFriends/:user_id').get(function(req,res){
+router.route('/getFriends/:user_id').get(passport.authenticate('jwt', { session: true }),function(req,res){
     try{
         var infoMsg = {
             "url": req.originalUrl,
@@ -27,7 +27,7 @@ router.route('/getFriends/:user_id').get(function(req,res){
     }
 });
 
-router.route('/getFriendProfile/:user_id').get(function(req,res){
+router.route('/getFriendProfile/:user_id').get(passport.authenticate('jwt', { session: true }),function(req,res){
     try{
         var infoMsg = {
             "url": req.originalUrl,
@@ -56,7 +56,7 @@ router.route('/getFriendProfile/:user_id').get(function(req,res){
     }
 });
 
-router.route('/getFriendRequest/:user_id').get(function(req,res){
+router.route('/getFriendRequest/:user_id').get(passport.authenticate('jwt', { session: true }),function(req,res){
     try{
         var infoMsg = {
             "url": req.originalUrl,
@@ -85,7 +85,7 @@ router.route('/getFriendRequest/:user_id').get(function(req,res){
     }
 });
 
-router.route('/sendFriendRequest').post(function(req,res){
+router.route('/sendFriendRequest').post(passport.authenticate('jwt', { session: true }),function(req,res){
 try{
     var infoMsg = {
         "url": req.originalUrl,

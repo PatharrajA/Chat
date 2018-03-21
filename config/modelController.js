@@ -7,7 +7,7 @@ userController = require('../model/user');
 chatController=require('../model/chat');
 friendsController=require('../model/friends');
 groupController=require('../model/group');
-
+contactController=require('../model/contacts');
 
 
 // Function Controllers

@@ -56,7 +56,7 @@
         }
       }
     },
-    "/user/signup":{
+    "/user/signup": {
       "post": {
         "tags": [
           "Users"
@@ -78,6 +78,35 @@
         "responses": {
           "200": {
             "description": "User Created Successfully",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "/user/profile/:user_id": {
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "description": "Update User Profile",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "Update User Profile",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "User Profile Updated Successfully",
             "schema": {
               "$ref": "#/definitions/User"
             }

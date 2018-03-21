@@ -6,7 +6,7 @@
  * @description Create New Group
  * @returns Group
  */
-router.route('/group').post(function(req,res){
+router.route('/').post(passport.authenticate('jwt', { session: true }),function(req,res){
 try{
     var infoMsg = {
         "url": req.originalUrl,
@@ -43,7 +43,7 @@ try{
  * @description Get Group by id
  * @returns Group
  */
-router.route('/group/:group_id').get(function(req,res){
+router.route('/:group_id').get(passport.authenticate('jwt', { session: true }),function(req,res){
     try{
         var infoMsg = {
             "url": req.originalUrl,
@@ -73,7 +73,7 @@ router.route('/group/:group_id').get(function(req,res){
 });
 
 
-router.route('/leftGroup').put(function(req,res){
+router.route('/leftGroup').put(passport.authenticate('jwt', { session: true }),function(req,res){
     try{
         var infoMsg = {
             "url": req.originalUrl,
@@ -103,7 +103,7 @@ router.route('/leftGroup').put(function(req,res){
     }
 });
 
-router.route('/updateGroup').put(function(req,res){
+router.route('/updateGroup').put(passport.authenticate('jwt', { session: true }),function(req,res){
     try{
         var infoMsg = {
             "url": req.originalUrl,

@@ -27,6 +27,12 @@ var user_modal = mongoose.Schema({
     last_name: {
         type: String
     },
+    gender:{
+        type:String
+    },
+    dob:{
+        type:Date
+    },
     updated_at: {
         type: Date,
         value: Date.now()
